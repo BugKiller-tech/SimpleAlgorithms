@@ -24,6 +24,7 @@ public class StockGrabber implements Subject {
   public void unregister(Observer deleteObserver) {
     // TODO Auto-generated method stub
     int observerIndex = observers.indexOf(deleteObserver);
+    observers.remove(observerIndex);
     System.out.println("Observer " + (observerIndex + 1) + " deleted");
   }
 

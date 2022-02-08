@@ -12,41 +12,23 @@ public class GrabStocks {
     stockGrabber.setIBMPrice(197.00);
     stockGrabber.setAAPLPrice(677.60);
     stockGrabber.setGOOGPrice(676.40);
+
+    stockGrabber.unregister(stockObserver1);
     
-    stockObserver1.printThePrices();
-    stockObserver2.printThePrices();
-    stockObserver3.printThePrices();
-    
+      
     stockGrabber.setIBMPrice(197.00);
     stockGrabber.setAAPLPrice(677.60);
     stockGrabber.setGOOGPrice(676.40);
+
+    Runnable getIBM = new GetTheStock(stockGrabber, 2, "IMB", 197.00);
+    Runnable getAAPL = new GetTheStock(stockGrabber, 2, "AAPL", 677.60);
+    Runnable getGOOG = new GetTheStock(stockGrabber, 2, "GOOG", 200.00);
+
+    new Thread(getIBM).start();
+    new Thread(getAAPL).start();
+    new Thread(getGOOG).start();
     
-    stockObserver1.printThePrices();
-    stockObserver2.printThePrices();
-    stockObserver3.printThePrices();
     
-    stockGrabber.setIBMPrice(197.00);
-    stockGrabber.setAAPLPrice(677.60);
-    stockGrabber.setGOOGPrice(676.40);
-    
-    stockObserver1.printThePrices();
-    stockObserver2.printThePrices();
-    stockObserver3.printThePrices();
-    
-    stockGrabber.setIBMPrice(197.00);
-    stockGrabber.setAAPLPrice(677.60);
-    stockGrabber.setGOOGPrice(676.40);
-    
-    stockObserver1.printThePrices();
-    stockObserver2.printThePrices();
-    stockObserver3.printThePrices();
-    
-    stockGrabber.setIBMPrice(197.00);
-    stockGrabber.setAAPLPrice(677.60);
-    stockGrabber.setGOOGPrice(676.40);
-    
-    stockObserver1.printThePrices();
-    stockObserver2.printThePrices();
   }
   
 }
